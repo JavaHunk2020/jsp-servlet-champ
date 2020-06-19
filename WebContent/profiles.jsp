@@ -64,13 +64,12 @@
         <td>
          <img src="${profileDTO.photo}"  style="height: 120px;"  class="zoom"/>
         </td>
-        <td>
-            <a href="#">
-            <img src="img/locked.png"  style="height: 30px;"/>
-            
-               &nbsp;  &nbsp;
-               <a href="#">
-            <img src="img/unlocked.png"  style="height: 30px;"/>
+        <td >
+            <a href="editProfile?username=${profileDTO.username}">
+            <button type="button" class="btn btn-primary">E</button>
+            </a>
+               <a href="deleteProfile?username=${profileDTO.username}">
+           <button type="button" class="btn btn-danger">D</button>
             </a>
         </td>
       </tr>
