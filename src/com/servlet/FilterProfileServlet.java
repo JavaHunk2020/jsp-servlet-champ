@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.dao.ProfileDao;
 import com.dao.ProfileDaoImpl;
 
-@WebServlet("/searchProfile")
-public class SearchProfileServlet  extends HttpServlet{
+@WebServlet("/filterProfile")
+public class FilterProfileServlet  extends HttpServlet{
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -24,13 +24,19 @@ public class SearchProfileServlet  extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String search=req.getParameter("search");
-		 ProfileDao profileDao=new ProfileDaoImpl();
-		  List<ProfileDTO> profileDTOs=profileDao.searchProfiles(search);
+		  String filterText=req.getParameter("filterText");
+		  ProfileDao profileDao=new ProfileDaoImpl();
+		  List<ProfileDTO> profileDTOs=null;
+		  if(!"Select".equalsIgnoreCase(filterText)) {
+			  profileDTOs=profileDao.filterProfiles(filterText);
+		  }else {
+			  profileDTOs=profileDao.findAll();
+		  }
 		   //adding profileDTO object inside request scope with namemagic
-		   req.setAttribute("profileDTOs", profileDTOs);
-		   
+		  
 		   req.setAttribute("listoptions", profileDao.findAllQualification());
+		   
+		   req.setAttribute("profileDTOs", profileDTOs);
 		   req.getRequestDispatcher("profiles.jsp").forward(req, resp);
 	}	
 

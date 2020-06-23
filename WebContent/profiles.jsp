@@ -45,6 +45,16 @@
                    <button type="button" class="btn btn-primary">Clear</button>
                    </a>
           </form>
+           <hr/>
+            <form action="filterProfile">
+           <select name="filterText" class="form-control" style="width: 80%;display: inline;">
+           <option>Select</option>
+           <cc:forEach  items="${listoptions}"  var="toption">
+                  <option>${toption}</option>           
+                 </cc:forEach> 
+           </select>
+           <button type="submit" class="btn btn-primary" style="margin-top: -4px;">Go</button>
+           </form>
           <hr/>
         <table class="table table-bordered">
     <thead>
