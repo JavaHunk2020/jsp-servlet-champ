@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.servlet.utils.DbUtils;
+
 @WebServlet("/editProfile")
 public class EditProfileServlet  extends HttpServlet{
 	
@@ -24,8 +26,7 @@ public class EditProfileServlet  extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 			String pusername=req.getParameter("username");  //<a href="editProfile?username=${profileDTO.username}">
 			try {
-				   Class.forName("com.mysql.jdbc.Driver");
-				   Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/vehicle_db","root","mysql@1234");
+				 Connection conn=DbUtils.getConnection();
 				   String sql="select username,password,name,email,qualification,mobile,photo,gender,createdate from user_login_tbl where username=?";
 				   PreparedStatement pstmt=conn.prepareStatement(sql);
 				   pstmt.setString(1,pusername);

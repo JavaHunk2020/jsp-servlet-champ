@@ -16,8 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.servlet.utils.DbUtils;
 
-@WebServlet("/profiles")
-public class ProfilesServlet  extends HttpServlet{
+@WebServlet("/searchProfile")
+public class SearchProfileServlet  extends HttpServlet{
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -27,10 +27,11 @@ public class ProfilesServlet  extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//I need to fetch whole profiles data from database
-		  List<ProfileDTO> profileDTOs=new ArrayList<>(); 
+		String search=req.getParameter("search");
+		List<ProfileDTO> profileDTOs=new ArrayList<>(); 
 		try {
-			   Connection conn=DbUtils.getConnection();
-			   String sql="select username,password,name,email,qualification,mobile,photo,gender,createdate from user_login_tbl";
+			 Connection conn=DbUtils.getConnection();
+			   String sql="select username,password,name,email,qualification,mobile,photo,gender,createdate from user_login_tbl  where name like '%"+search+"%'  or  qualification like '%"+search+"%'";
 			   PreparedStatement pstmt=conn.prepareStatement(sql);
 			   //Fire the query
 			   //CTR+SHIFT+O

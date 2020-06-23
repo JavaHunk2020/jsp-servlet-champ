@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.servlet.utils.DbUtils;
 import com.servlet.utils.Utils;
 
 @WebServlet("/signup")
@@ -32,9 +33,8 @@ public class SignupServlet  extends HttpServlet{
 		String usenname=email;
 		
 		try {
-			   Class.forName("com.mysql.jdbc.Driver");
-			   Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/vehicle_db","root","mysql@1234");
-			   String sql="insert into  user_login_tbl(username,password,name,email,qualification,mobile,photo,gender,createdate) values(?,?,?,?,?,?,?,?,?)";
+			  Connection conn=DbUtils.getConnection();
+			 String sql="insert into  user_login_tbl(username,password,name,email,qualification,mobile,photo,gender,createdate) values(?,?,?,?,?,?,?,?,?)";
 			   PreparedStatement pstmt=conn.prepareStatement(sql);
 			   pstmt.setString(1, usenname);
 			   pstmt.setString(2, password);

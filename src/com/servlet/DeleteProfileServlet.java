@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.servlet.utils.DbUtils;
+
 @WebServlet("/deleteProfile")
 public class DeleteProfileServlet  extends HttpServlet{
 	
@@ -24,9 +26,8 @@ public class DeleteProfileServlet  extends HttpServlet{
 			String pusername=req.getParameter("username");
 			
 			try {
-				   Class.forName("com.mysql.jdbc.Driver");
-				   Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/vehicle_db","root","mysql@1234");
-				   String sql="delete from user_login_tbl where username=?";
+				  Connection conn=DbUtils.getConnection();
+				  String sql="delete from user_login_tbl where username=?";
 				   PreparedStatement pstmt=conn.prepareStatement(sql);
 				   pstmt.setString(1, pusername);
 				   pstmt.executeUpdate();

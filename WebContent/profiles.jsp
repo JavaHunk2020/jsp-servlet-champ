@@ -38,13 +38,29 @@
    				  	        <button type="button" class="btn btn-warning">Logout</button>
    				  	 </a>
          <hr/>
+          <form action="searchProfile">
+               <input type="text" name="search" class="form-control" style="width: 50%;display: inline;"/>
+               <button type="submit" class="btn btn-primary">Go</button>
+                   <a href="profiles">
+                   <button type="button" class="btn btn-primary">Clear</button>
+                   </a>
+          </form>
+          <hr/>
         <table class="table table-bordered">
     <thead>
       <tr>
         <th>Username</th>
         <th>Password</th>
          <th>Name</th>
-        <th>Email</th>
+        <th>Email
+               <a  href="sortProfile?sort=asc">
+                  <img src="img/asc.png"/>
+               </a>
+               <a  href="sortProfile?sort=desc">
+                   <img src="img/desc.png"/>
+              </a>
+        
+        </th>
         <th>Qualification</th>
         <th>Mobile</th>
         <th>Photo</th>
@@ -58,7 +74,8 @@
         <td>${profileDTO.username}</td>
         <td>${profileDTO.password}</td>
         <td>${profileDTO.name}</td>
-        <td>${profileDTO.email}</td>
+        
+        <td>${profileDTO.email}
         <td>${profileDTO.qualification}</td>
         <td>${profileDTO.mobile}</td>
         <td>

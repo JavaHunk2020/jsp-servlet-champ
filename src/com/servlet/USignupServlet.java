@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.servlet.utils.DbUtils;
 import com.servlet.utils.Utils;
 
 @WebServlet("/usignup")
@@ -30,9 +31,8 @@ public class USignupServlet  extends HttpServlet{
 		String photo=req.getParameter("photo");
 		
 		try {
-			   Class.forName("com.mysql.jdbc.Driver");
-			   Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/vehicle_db","root","mysql@1234");
-			   String sql="update user_login_tbl set name=?,email=?,qualification=?,mobile=?,photo=?,gender=? where username=?";
+			  Connection conn=DbUtils.getConnection();
+			  String sql="update user_login_tbl set name=?,email=?,qualification=?,mobile=?,photo=?,gender=? where username=?";
 			   PreparedStatement pstmt=conn.prepareStatement(sql);
 			   pstmt.setString(1, name);
 			   pstmt.setString(2, email);
