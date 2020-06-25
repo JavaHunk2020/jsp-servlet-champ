@@ -31,28 +31,28 @@
          <table class="table table-bordered">
    				  	 		<tr>
    				  	 				<td>Name</td>
-   				  	 				<td>${magic.name}</td>
+   				  	 				<td>${sessionScope.userData.name}</td>
    				  	 		</tr>
    				  	 			<tr>
    				  	 				<td>Email</td>
-   				  	 				<td>${magic.email}</td>
+   				  	 				<td>${userData.email}</td>
    				  	 		</tr>
    				  	 			<tr>
    				  	 				<td>Username</td>
-   				  	 				<td>${magic.username}</td>
+   				  	 				<td>${userData.username}</td>
    				  	 		</tr>
    				  	 			<tr>
    				  	 				<td>Gender</td>
-   				  	 				<td>${magic.gender}</td>
+   				  	 				<td>${userData.gender}</td>
    				  	 		</tr>
    				  	 			<tr>
    				  	 				<td>Mobile</td>
-   				  	 				<td>${magic.mobile}</td>
+   				  	 				<td>${userData.mobile}</td>
    				  	 		</tr>
    				  	 			<tr>
    				  	 				<td>Photo</td>
    				  	 				<td>
-   				  	 				 <img src="${magic.photo}" style="height: 200px;"/>
+   				  	 				 <img src="${userData.photo}" style="height: 200px;"/>
    				  	 				</td>
    				  	 		</tr>
    				  	 </table>

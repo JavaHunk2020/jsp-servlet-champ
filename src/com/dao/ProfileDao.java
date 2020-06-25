@@ -2,7 +2,7 @@ package com.dao;
 
 import java.util.List;
 
-import com.servlet.ProfileDTO;
+import com.servlet.dto.ProfileDTO;
 
 public interface ProfileDao {
 	void deleteByUsername(String pusername);

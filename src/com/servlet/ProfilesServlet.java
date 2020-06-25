@@ -1,9 +1,7 @@
 package com.servlet;
 
 import java.io.IOException;
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Set;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.dao.ProfileDao;
 import com.dao.ProfileDaoImpl;
+import com.servlet.dto.ProfileDTO;
 
 @WebServlet("/profiles")
 public class ProfilesServlet  extends HttpServlet{

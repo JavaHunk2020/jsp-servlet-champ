@@ -33,31 +33,13 @@
    				            <a href="profiles">
    				  	        <button type="button" class="btn btn-success">Profiles</button>
    				  	        </a>
-   				  	        
-   				  	        <a href="loggedUser">
    				  	        <button type="button" class="btn btn-primary">Logged in User</button>
-   				  	        </a>
    				  	  <a href="logout"> 
    				  	        <button type="button" class="btn btn-warning">Logout</button>
    				  	 </a>
          <hr/>
-          <form action="searchProfile">
-               <input type="text" name="search" class="form-control" style="width: 50%;display: inline;"/>
-               <button type="submit" class="btn btn-primary">Go</button>
-                   <a href="profiles">
-                   <button type="button" class="btn btn-primary">Clear</button>
-                   </a>
-          </form>
            <hr/>
-            <form action="filterProfile">
-           <select name="filterText" class="form-control" style="width: 80%;display: inline;">
-           <option>Select</option>
-           <cc:forEach  items="${listoptions}"  var="toption">
-                  <option>${toption}</option>           
-                 </cc:forEach> 
-           </select>
-           <button type="submit" class="btn btn-primary" style="margin-top: -4px;">Go</button>
-           </form>
+           Logged in Users
           <hr/>
         <table class="table table-bordered">
     <thead>

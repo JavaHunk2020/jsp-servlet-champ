@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import com.servlet.ProfileDTO;
+import com.servlet.dto.ProfileDTO;
 import com.servlet.utils.DbUtils;
 
 public class ProfileDaoImpl implements ProfileDao {

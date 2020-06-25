@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.dao.ProfileDao;
 import com.dao.ProfileDaoImpl;
+import com.servlet.dto.ProfileDTO;
 import com.servlet.utils.Utils;
 
 @WebServlet("/signup")

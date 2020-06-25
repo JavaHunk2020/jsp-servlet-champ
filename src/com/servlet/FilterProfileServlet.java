@@ -1,9 +1,7 @@
 package com.servlet;
 
 import java.io.IOException;
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Set;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.dao.ProfileDao;
 import com.dao.ProfileDaoImpl;
+import com.servlet.dto.ProfileDTO;
 
 @WebServlet("/filterProfile")
 public class FilterProfileServlet  extends HttpServlet{
@@ -20,7 +19,7 @@ public class FilterProfileServlet  extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doGet(req,resp);
-	}
+	}	
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
