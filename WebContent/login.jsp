@@ -17,13 +17,41 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
 <style type="text/css">
-
 .semere {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
 </style>
+
+<script>
+
+   function clearMsg(){
+	   document.getElementById("emessage").innerHTML="";
+	   document.getElementById("studentImage").src="img/student.png";
+   }   
+   
+   //function 
+   function validateLogin() {
+	    //string
+		var uname=document.getElementById("username").value;
+		if(uname.length==0){
+			//document.getElementById("emessage") - span object
+			document.getElementById("emessage").innerHTML="Username cannot be empty";
+			//document.getElementById("studentImage") - image object
+			document.getElementById("studentImage").src="img/validate.jpg";
+			return;
+		}
+		var pass=document.getElementById("password").value;
+		if(pass.length==0){
+			document.getElementById("emessage").innerHTML="Password cannot be empty";
+			document.getElementById("studentImage").src="img/validate.jpg";
+			return;
+		}
+		//submitting form manually using JavaScript
+		document.authform.submit();
+   }
+</script>
 
 
 </head>
@@ -36,20 +64,23 @@
 	<div  class="container">
 	     <hr style="border-top: 5px solid rgba(103,58,183,1);"/>
 		<img id="studentImage"  src="img/student.png" class="semere"  style="height: 200px;">
-		<form  action="auth" method="post">
+		<form name="authform"  action="auth" method="post">
 		<div  class="semere"   style="width: 50%">
 		 <span  id="message"  style="color:red;font-size: 16px;font-weight: bold;">
 		   <marquee scrolldelay="100" direction="right">  ${hmmmm}</marquee>  
 		 </span>
 		   <hr/>
+		   <span  id="emessage"  style="color:blue;font-size: 16px;font-weight: bold;">
+		 </span>
 		 			<br/>
+		 			 
 		            <label for="username">Username</label>
-		            <input type="text" name="username" class="form-control" >
+		            <input type="text" name="username" class="form-control" id="username" onkeyup="clearMsg();">
 		              <br/>
 		               <label>Password</label>
-		            <input type="password" name="password" class="form-control" onkeyup="clearMessage();">
+		            <input type="password" name="password" class="form-control" id="password" onkeyup="clearMsg();">
 		             <br/>
-		<button type="submit" class="btn btn-primary">Sign In</button>
+		<button type="button" class="btn btn-primary" onclick="validateLogin();">Sign In</button>
 		<a href="signup.jsp"><button type="button" class="btn btn-info">Sign Up</button></a>
 		<a href="forgotPassword.jsp"><button type="button" class="btn btn-primary">Forget Password</button></a>
 		</div>
