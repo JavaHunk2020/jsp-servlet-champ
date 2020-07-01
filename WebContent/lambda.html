@@ -13,17 +13,21 @@
   
   <script>
   
-     console.log(add(12,8))
-     console.log(add(32,8))
-     console.log(add(52,8))
-     console.log(add(60,40))
-     console.log(add(77,23))
-
-  	function add(num1,num2) {
-          let tempa=num1+num2;
-          return tempa;
-    }
-  
+//what is paa - >>> paa is variable which holds function definition
+/*   var paa=function(num1,num2) {
+ 		let tempa=num1+num2;
+ 		return tempa;
+	}; */
+	
+	   var pa=function(num1,num2) {
+ 		return num1+num2;
+	   };
+	   
+	   //what is paa - >>> paa is variable which holds function definition
+       var paa=(num1,num2)=>num1+num2;
+       console.log(paa); 
+       var result=paa(34,56);
+  	
   </script>
 
 </head>

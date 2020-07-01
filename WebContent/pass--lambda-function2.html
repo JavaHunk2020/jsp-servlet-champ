@@ -12,17 +12,25 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   
   <script>
-  
-     console.log(add(12,8))
-     console.log(add(32,8))
-     console.log(add(52,8))
-     console.log(add(60,40))
-     console.log(add(77,23))
+   
+      //loosily -> type checking language
+      //var sum = function(num1,num2){
+    	//  return num1+num2;;
+      //}
+      var sum=(num1,num2)=>num1+num2;
+      
+      sum(20,11);
+      
+      var sub=(num1,num2)=>num1-num2;
 
-  	function add(num1,num2) {
-          let tempa=num1+num2;
-          return tempa;
-    }
+      var tempa=ajax(40,30,(num1,num2)=>num1+num2,(num1,num2)=>num1-num2);
+      console.log(tempa);
+      
+      //This is normal function , named function
+      function ajax(arg1,arg2,bk1,bk2) {
+    	  var result=bk1(arg1,arg2)+bk2(arg1,arg2);
+    	  return result;
+      }
   
   </script>
 

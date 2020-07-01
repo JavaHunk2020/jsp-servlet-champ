@@ -38,7 +38,7 @@ public class AccessSecurityFilter implements Filter {
 		HttpServletRequest httpServletRequest =(HttpServletRequest)request;
 		//http://localhost:8080/vehicle-store/profiles
 		String resourcePath=httpServletRequest.getServletPath();
-		if(allowedResources.contains(resourcePath) || resourcePath.contains("/img")) {
+		if(allowedResources.contains(resourcePath) || resourcePath.contains("/img") || resourcePath.contains("htm")) {
 			chain.doFilter(request,response);
 		}else {
 			

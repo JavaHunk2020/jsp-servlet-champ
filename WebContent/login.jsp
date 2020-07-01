@@ -59,7 +59,6 @@
 	<header style="background-color: #03a9f4; height: 30px;">
 	   <b>Address : = ${applicationScope.address}</b> 
 	   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	
 	 </header>
 	<div  class="container">
 	     <hr style="border-top: 5px solid rgba(103,58,183,1);"/>
@@ -70,8 +69,7 @@
 		   <marquee scrolldelay="100" direction="right">  ${hmmmm}</marquee>  
 		 </span>
 		   <hr/>
-		   <span  id="emessage"  style="color:blue;font-size: 16px;font-weight: bold;">
-		 </span>
+		   <span  id="emessage"  style="color:blue;font-size: 16px;font-weight: bold;"></span>
 		 			<br/>
 		 			 
 		            <label for="username">Username</label>
