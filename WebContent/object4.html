@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Function!!!!!</title>
+
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  
+  <script>
+  
+    //class Customer{
+    	//Customer(String name,String email,int age){}
+    //}
+    //function constrcutor
+    //in JavaScript every function is an object
+    function Customer(name,email,age){
+    	this.name=name;
+    	this.email=email;
+    	this.age=age;
+    }
+    //JSON and AJAX
+    Customer.prototype.show=function(){
+		console.log("this.name= "+this.name);
+		console.log("this.email= "+this.email);
+		console.log("this.age= "+this.age);
+	};
+    
+    var custa1=new Customer("Hunk1","hunk100@gmail.com",1);
+    var custa2=new Customer("Hunk2","hunk200@gmail.com",2);
+    var custa3=new Customer("Hunk3","hunk300@gmail.com",4);
+    var custa4=new Customer("Hunk4","hunk400@gmail.com",6);
+    var custa5=new Customer("Hunk5","hunk500@gmail.com",8);
+    custa1.show();
+    custa2.show();
+    custa3.show();
+    custa4.show();
+    custa5.show();
+    
+  
+  </script>
+
+</head>
+<body>
+
+<header style="background-color: #03a9f4; height: 30px;">
+	   <b>Address : = ${applicationScope.address}</b> 
+	   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 </header>
+	<div  class="container">
+	     <hr style="border-top: 5px solid rgba(103,58,183,1);"/>
+		<img id="studentImage"  src="img/student.png" class="semere"  style="height: 200px;">
+	</div>
+	
+
+</body>
+</html>
