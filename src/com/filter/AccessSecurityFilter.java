@@ -25,6 +25,7 @@ public class AccessSecurityFilter implements Filter {
 	public void init(FilterConfig filterConfig) throws ServletException {
 		allowedResources.add("/login.jsp");
 		allowedResources.add("/auth");
+		allowedResources.add("/fact");
 		allowedResources.add("/error.jsp");
 		allowedResources.add("/signup.jsp");
 		allowedResources.add("/forgetPassword.jsp");
