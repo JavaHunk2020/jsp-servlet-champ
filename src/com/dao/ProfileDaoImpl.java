@@ -192,6 +192,42 @@ public class ProfileDaoImpl implements ProfileDao {
 		}
 		return profileDTOs;
 	}
+	
+	
+	@Override
+	public ProfileDTO findByEmail(String pemail) {
+		ProfileDTO profileDTO = null;
+		String sql = "select username,password,name,email,qualification,mobile,photo,gender,createdate from user_login_tbl where email=?";
+		ResultSet rs=null;
+		try(Connection conn = DbUtils.getConnection();PreparedStatement pstmt = conn.prepareStatement(sql);){
+			pstmt.setString(1, pemail);
+			 rs = pstmt.executeQuery();
+			// Fire the query
+			// CTR+SHIFT+O
+			if (rs.next()) { // here user is there
+				String username = rs.getString(1);
+				String password = rs.getString(2);
+				String name = rs.getString(3);
+				String email = rs.getString(4);
+				String qualification = rs.getString(5);
+				String mobile = rs.getString(6);
+				String photo = rs.getString(7);
+				String gender = rs.getString(8);
+				profileDTO = new ProfileDTO(username, password, name, email, mobile, gender, photo, qualification);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(rs!=null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return profileDTO;
+	}
 
 	@Override
 	public ProfileDTO findByUsername(String pusername) {

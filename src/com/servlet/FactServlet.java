@@ -23,7 +23,8 @@ public class FactServlet  extends HttpServlet{
 	}	
 	
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) 
+			throws ServletException, IOException {
 		    String num=req.getParameter("num");
 			int n=Integer.parseInt(num);
 			int sum=1;
@@ -31,15 +32,19 @@ public class FactServlet  extends HttpServlet{
 				sum=sum*x;
 			}
 			//text/html
-			resp.setContentType("application/json");
+			resp.setContentType("application/json");//MIME type
+			
 			AppResponse appResponse=new AppResponse();
 			appResponse.setMessage("Factorial of "+num+" is "+sum);
 			appResponse.setResult(sum);
 			appResponse.setNum(n);
+			
 			//convert object into JSON
 			Gson gson=new Gson();
 			String jsonData=gson.toJson(appResponse);
 			System.out.println(jsonData);
+			//Writing JSON String data into response
+			//and sending back to the caller
 			resp.getWriter().println(jsonData);
 	}
 }

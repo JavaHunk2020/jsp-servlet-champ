@@ -26,20 +26,18 @@
 
   function calFact(){
 	 var pnum=$("#num").val();
-	 //Make ajax call
 	 
-	 fetch("fact?num="+pnum).
-	 then(rep=>rep.json()).
-	 then(function(data) {
-		 //data={
-/* message: "Factorial of 7 is 5040",
-result: 5040,
-num: 7
-}  */
-		 console.log(data);
-		 $("#message").html(data.message);
-		 
+	 //fetch is used to make ajax call
+	 //METHOD=GET
+	 var promise=fetch("fact?num="+pnum);
+	 
+	 promise.then((reponse) =>reponse.json()).then(function(pdata){
+		 //pdata - is JavaScript object created by then
+		 /pdata={message:"ajhajha",result:120,num:5}
+		 var p=pdata.message;
+		 $("#message").html(pdata.message);
 	 });
+	
   }
 
 </script>

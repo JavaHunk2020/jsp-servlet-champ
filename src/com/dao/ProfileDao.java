@@ -15,4 +15,5 @@ public interface ProfileDao {
 	String updateSignup(ProfileDTO profileDTO);
 	List<ProfileDTO> filterProfiles(String filterText);
 	List<String> findAllQualification();
+	ProfileDTO findByEmail(String email);
 }

@@ -30,6 +30,7 @@ public class AccessSecurityFilter implements Filter {
 		allowedResources.add("/signup.jsp");
 		allowedResources.add("/forgetPassword.jsp");
 		allowedResources.add("/signup");
+		allowedResources.add("/ajaxSearchProfile");
 		
 	}
 
